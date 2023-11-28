@@ -1,0 +1,86 @@
+/* .course-details-div{
+    background-color: #17171A;
+    color: white;
+} */
+.course-header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    background-color: #2D2F31;
+    color: white;
+    border-radius: 8px;
+
+}
+.head-des{
+    width: 50%;
+}
+.image-container{
+    width: 50%;
+}
+.image-container img{
+    object-fit: contain;
+    width: 100%;
+}
+.accordion {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #333;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #17171A;
+    color: white;
+    
+  }
+  .heading{
+    font-size: 35px;
+    font-weight: 600;
+  }
+  
+  .accordion-title {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .accordion-data {
+    text-align: left;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+    padding: 1rem;
+  }
+  
+  .show {
+    max-height: 500px;
+  }
+  
+  .icon {
+    transform: rotate(0deg);
+    transition: all 0.2s;
+  }
+  
+  .icon-clicked {
+    transform: rotate(180deg);
+    transition: all 0.2s;
+  }
+  .schedule-prereq{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+
+  }
+
+  .shedule-div{
+    padding: 10px;
+    background-color: #17171A;
+    color: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin: 10px;
+    height: 300px;
+  }
