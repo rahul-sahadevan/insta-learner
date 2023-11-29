@@ -1,9 +1,9 @@
-# you can run this application by clicking this link :(https://insta-learner-alemeno.netlify.app/)
+# You can run this application by clicking this link :(https://insta-learner-alemeno.netlify.app/)
 - In the home page you can see the list of courses
 - You can click on 'view course' button to navigate to the course details page
 - on the nav bar you can find the search bar to search the course or instructor
 
-# course details page
+# Course details page
 - in this page you can see the all details about the course 
 - you can see a 'Enroll' button by pressing that you can enroll in the course
 
