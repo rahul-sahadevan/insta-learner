@@ -1,7 +1,4 @@
-/* .course-details-div{
-    background-color: #17171A;
-    color: white;
-} */
+
 .course-header{
     display: flex;
     justify-content: space-around;
@@ -10,6 +7,7 @@
     background-color: #2D2F31;
     color: white;
     border-radius: 8px;
+    flex-wrap: wrap;
 
 }
 .head-des{
@@ -17,18 +15,21 @@
 }
 .image-container{
     width: 50%;
+    height: 100%;
 }
 .image-container img{
     object-fit: contain;
     width: 100%;
+    
 }
+/* style for accordian------------- */
 .accordion {
     display: flex;
     flex-direction: column;
     border: 1px solid #333;
     margin-top: 20px;
     border-radius: 10px;
-    background-color: #17171A;
+    background-color: #2D2F31;
     color: white;
     
   }
@@ -66,9 +67,10 @@
     transform: rotate(180deg);
     transition: all 0.2s;
   }
+  /* schedule div style------------------- */
   .schedule-prereq{
     display: flex;
-    justify-content: center;
+    justify-content:flex-start;
     gap: 20px;
     flex-wrap: wrap;
     align-items: center;
@@ -77,10 +79,51 @@
 
   .shedule-div{
     padding: 10px;
-    background-color: #17171A;
+    background-color: #2D2F31;
     color: white;
     border-radius: 10px;
     box-shadow: var(--shadow);
     margin: 10px;
-    height: 300px;
+    height: auto;
+    transition: all 0.5s ease;
+  }
+  
+  
+  /* media query------------------------------- */
+  @media only screen and (max-width:850px){
+    .course-header{
+      flex-direction: column-reverse;
+    }
+    .image-container{
+      width: 100%;
+    }
+    .head-des{
+      width: 100%;
+    }
+    
+  }
+
+  @media only screen and (max-width:412px){
+    .course-header{
+      flex-direction: column-reverse;
+
+    }
+    .image-container{
+      width: 100%;
+    }
+    .head-des{
+      width: 100%;
+
+    }
+    .head-des h1{
+      font-size: 28px;
+    }
+    .head-des h2,.shedule-div h2{
+      font-size: 20px;
+    }
+    .schedule-prereq{
+      justify-content: center;
+    }
+    
+    
   }

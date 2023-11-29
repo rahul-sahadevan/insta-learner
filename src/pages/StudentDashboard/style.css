@@ -1,6 +1,5 @@
 .dashboard-div{
     text-align: center;
-
 }
     
 .enroled-course-div{
@@ -9,4 +8,46 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+
+}
+
+.progress{
+    /* background-color:#FF004F; */
+    background-color: lightgreen;
+    color: white;
+    width:40%;
+    margin: auto;
+    border-radius: 10px;
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 20px;
+    transition: all 0.5s ease;
+}
+.less-progress{
+    background-color: #FF004F;
+    color: white;
+    width: 40%;
+    margin: auto;
+    border-radius: 10px;
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 20px;
+    transition: all 0.5s ease;
+}
+.progress-bar:hover{
+    transform: scale(1.01);
+}
+.progress-bar h2{
+    text-align: center;
+}
+
+
+/* media query------------------------------- */
+@media only screen and (max-width:450px){
+    .dashboard-div h1{
+        font-size: 35px;
+    }
+    .progress,.less-progress{
+        width: 100%;
+    }
 }

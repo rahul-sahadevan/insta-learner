@@ -1,20 +1,23 @@
 import { useDispatch, useSelector } from "react-redux"
 import './style.css'
 import { useState } from "react"
-import { ArrowDown, ChevronDown } from "react-feather"
+import {ChevronDown } from "react-feather"
 import { enrolledCourse } from "../../redux/actions/courseFetchingSlice"
 
 
 const CourseDetails = ()=>{
+
     const [active,setActive] = useState(false)
-    const {individualCourse} = useSelector(state => state.courses)
+    const {individualCourse,enrolledCourses} = useSelector(state => state.courses)
+    const {courses,isEnrolled} = enrolledCourses
     const dispatch = useDispatch();
     console.log(individualCourse)
 
+    // function to set the active variable--------
     function handleShow(){
         setActive(!active)
     }
-
+// function to dispatch the enrollement status----------
     function handleEnrollment(){
         dispatch(enrolledCourse({
             courses:individualCourse,
@@ -23,6 +26,7 @@ const CourseDetails = ()=>{
     }
 
     return (
+        // header div to show the major details of course--------
         <div className="course-details-div">
             <div className="course-header">
                 <div className="head-des">
@@ -31,7 +35,9 @@ const CourseDetails = ()=>{
                     <h2>Created By: {individualCourse.instructor}</h2>
                     <h3>Mode of Class: {individualCourse.location}</h3>
                     <h3>Enrollment: {individualCourse.enrollmentStatus}</h3>
-                    <button onClick={handleEnrollment}>Enroll</button>
+                    <button onClick={handleEnrollment}>
+                        {individualCourse.isEnrolled ? 'Enrolled' : 'Enroll'}
+                    </button>
 
                 </div>
                 <div className="image-container">
@@ -39,8 +45,8 @@ const CourseDetails = ()=>{
                 </div>
 
             </div>
-
-
+            {/* ------------------------------- */}
+            {/* created a accordian for the syllabus part--------------- */}
             <div className="accordion" onClick={handleShow}>
                 <div className="accordion-title ">
                     <div className="text"><p className="heading">Syllabus</p></div>
@@ -62,26 +68,25 @@ const CourseDetails = ()=>{
                     }
                 </div>
             </div>
-            <div className="schedule-prereq">
-                <div className="shedule-div">
-                    <p className="heading">Course Shedule</p>
-                    
-                    <h2><li>{individualCourse.schedule}</li></h2>
-                </div>
-                <div className="shedule-div">
-                    <p className="heading">Prerequisites</p>
-                    <ul>
-                        {
-                            individualCourse.prerequisites.map((req)=>(
-                                <li><h2>{req}</h2></li>
-                            ))
-                        }
 
-                    </ul>
-                
-                    
-                </div>
+            {/* div for schedule and prerequist-------------- */}
+            <div className="shedule-div">
+                <p className="heading">Course Shedule</p>
+                <li>
+                    <h2>{individualCourse.schedule}</h2>
+                </li>
+            </div>
 
+            <div className="shedule-div">
+                <p className="heading">Prerequisites</p>
+                <ul>
+                    {
+                        individualCourse.prerequisites.map((req)=>(
+                            <li><h2>{req}</h2></li>
+                        ))
+                    }
+
+                </ul>     
             </div>
         </div>
     )

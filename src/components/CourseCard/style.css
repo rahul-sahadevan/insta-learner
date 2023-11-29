@@ -1,25 +1,14 @@
-/* .course-card{
-    text-align: left;
-    box-shadow: 0px 0px 1px 2px rgb(197, 192, 192);
-    color: white;
-    padding: 8px;
-    border-radius: 5px;
-    width: 20%;
-    height: 320px;
-    padding: 3px;
-    background-color: #17171A;
-    line-height: 12px;
-
-} */
+/* style for the course listing card--------------- */
 .course-card{
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 0px 1px 2px rgb(197, 192, 192);
     padding: 8px;
-    background-color: #17171A;
+    background-color: #2978FF;
     border-radius: 5px;
     color: white;
+    font-weight: 600;
 }
 
 

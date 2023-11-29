@@ -1,18 +1,20 @@
 import { useDispatch } from 'react-redux'
-import './style.css'
 import { selectedCourse } from '../../redux/actions/courseFetchingSlice';
 import { useNavigate } from 'react-router-dom';
-import { CheckCircle } from 'react-feather';
+import './style.css'
 
+// this is the card that is displayed in the scrollbar list ---------------------
 const CourseCard = ({course ,isEnrolled})=>{
     const dispatch = useDispatch();
     const navigate = useNavigate()
 
+    // function handle to navigate to the course details page on click---------
     function handleCourse(){
         navigate('/selectedcourse')
         dispatch(selectedCourse(course))
     }
 
+    
     return (
         <div className="course-card">
             
@@ -22,7 +24,9 @@ const CourseCard = ({course ,isEnrolled})=>{
 
             </div>
 
-            <button onClick={handleCourse} >{isEnrolled ? `mark as done` : 'view course'}</button>
+            <button onClick={handleCourse} >
+                {isEnrolled ? `mark as done` : 'view course'}
+            </button>
 
         </div>
     )
